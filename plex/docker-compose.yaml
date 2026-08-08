@@ -1,0 +1,21 @@
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:version-1.43.3.10828-00f62d37d
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1500
+      - PGID=1500
+      - TZ=America/New_York
+      - VERSION=docker
+    devices: [/dev/dri]
+    privileged: true
+    volumes:
+      - /docker/plex:/config
+      - /mnt/TVShows:/mnt/TVShows
+      - /mnt/Movies:/mnt/Movies
+      - /mnt/Photos:/mnt/Photos
+      - /mnt/Books:/mnt/Books
+      - /mnt/Music:/mnt/Music
+
+    restart: unless-stopped
