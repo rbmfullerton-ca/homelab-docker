@@ -5,5 +5,12 @@
   "minimumReleaseAgeBehaviour": "relax-requirement-on-missing-data",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["lscr.io/linuxserver/plex"],
+      "versioning": "loose"
+    }
   ]
 }
