@@ -16,5 +16,6 @@ services:
       - /mnt/Photos:/mnt/Photos
       - /mnt/Books:/mnt/Books
       - /mnt/Music:/mnt/Music
-
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
