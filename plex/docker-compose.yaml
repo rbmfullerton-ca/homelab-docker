@@ -9,7 +9,6 @@ services:
       - TZ=America/New_York
       - VERSION=docker
     devices: [/dev/dri]
-    privileged: true
     volumes:
       - /docker/plex:/config
       - /mnt/TVShows:/mnt/TVShows
