@@ -9,9 +9,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - portainer_data:/data
+      - /docker/portainer/certs:/certs:ro
     ports:
       - "9443:9443"
       - "8000:8000"
+
+    command: --sslcert /certs/Hozzlab-cert.crt --sslkey /certs/Hozzlab-cert.key
 
 volumes:
   portainer_data:
